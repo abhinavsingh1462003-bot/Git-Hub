@@ -1,0 +1,79 @@
+{% extends "main.html" %}
+{% block title %}Contact Us{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <h1 class="text-center mb-5">Contact Us</h1>
+            
+            <div class="row mb-5">
+                <div class="col-md-4 mb-3">
+                    <div class="card product-card h-100 text-center">
+                        <div class="card-body">
+                            <div class="mb-3" style="font-size: 2.5rem; color: #667eea;">
+                                <i class="bi bi-geo-alt"></i>
+                            </div>
+                            <h5 class="card-title">Address</h5>
+                            <p class="card-text text-muted">123 Commerce Street<br>Shopping City, SC 12345</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="card product-card h-100 text-center">
+                        <div class="card-body">
+                            <div class="mb-3" style="font-size: 2.5rem; color: #764ba2;">
+                                <i class="bi bi-telephone"></i>
+                            </div>
+                            <h5 class="card-title">Phone</h5>
+                            <p class="card-text text-muted">+1 (800) 123-4567<br>Mon - Fri, 9AM - 6PM</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="card product-card h-100 text-center">
+                        <div class="card-body">
+                            <div class="mb-3" style="font-size: 2.5rem; color: #38ef7d;">
+                                <i class="bi bi-envelope"></i>
+                            </div>
+                            <h5 class="card-title">Email</h5>
+                            <p class="card-text text-muted">support@ecommerce.com<br>Response within 24 hours</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card product-card mb-4">
+                <div class="card-body p-4">
+                    <h3 class="card-title mb-4">Send us a Message</h3>
+                    <form>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Your Name</label>
+                            <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="subject" class="form-label">Subject</label>
+                            <input type="text" class="form-control" id="subject" placeholder="What is this about?" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" rows="5" placeholder="Your message here..." required></textarea>
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="text-center mt-4">
+                <a href="{% url 'home' %}" class="btn btn-outline-primary">Back to Home</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

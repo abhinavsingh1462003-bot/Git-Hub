@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title%} Ecommerce {% endblock %}</title>
+    {% load django_bootstrap5 %}
+    {% load static %}
+    {% bootstrap_css %}
+    <link rel="stylesheet" href="{% static 'css/my.css' %}">
+</head>
+<body>
+    <!-- --------------------------------Navigation bar------------------------------------- -->
+    <header>
+        <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="../"><img src="{% static 'images/pexels-pixabay-163210.jpg' %}" width="100" height="75">Ecommerce</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+        </li>
+
+         <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'about' %}">About</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'contact' %}">Contact</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'login' %}">Login</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'newuser' %}">Create an Account</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'changepassword' %}">Change Password</a>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+    </header>
+    <!-- -------------------------------Navigation bar ends------------------------------- -->
+
+    {% block content %}
+    {% endblock %}
+
+<!-- -----------------------------------footer start----------------------------------- -->
+    <footer>
+
+    </footer>
+<!-- ------------------------------------footer end------------------------------------- -->
+    {% bootstrap_javascript %}
+    <script src="{% static 'js/my.js' %}"></script>
+</body>
+</html>
+

@@ -1,0 +1,52 @@
+{% extends "main.html" %}
+{% block title %}Create Account{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-6 col-md-8 col-sm-10" style="border: 1px solid grey; padding:40px">
+            <h2 class="text-center mb-2">Create Account</h2>
+            <p class="text-center text-muted mb-4">Join us today and get started</p>
+            
+            <form action="{% url 'newuser' %}" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="name" class="form-label">Full Name</label>
+                    <input type="text" name="name" id="name" required class="form-control" placeholder="Enter your full name"/>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email Address</label>
+                    <input type="email" name="email" id="email" required class="form-control" placeholder="Enter your email"/>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" name="password" id="password" required class="form-control" placeholder="Create a secure password"/>
+                </div>
+                <div class="mb-3">
+                    <label for="mobile" class="form-label">Mobile Number</label>
+                    <input type="number" name="mobile" id="mobile" required class="form-control" placeholder="Enter your mobile number"/>
+                </div>  
+                <div class="mb-3">
+                    <label for="photo" class="form-label">Profile Photo</label>
+                    <input type="file" name="photo" id="photo" required class="form-control"/>
+                </div>  
+                <div class="mb-4">
+                    <label for="address" class="form-label">Address</label>
+                    <textarea name="address" id="address" required class="form-control" rows="3" placeholder="Enter your address"></textarea>
+                </div>   
+                <div class="d-grid gap-2">                  
+                    <input type="submit" class="btn btn-primary btn-lg" value="Sign Up" />
+                </div>
+            </form>
+            
+            {% if message %}
+            <div class="text-center mt-3">
+                <div class="alert alert-success fade show" role="alert">
+                    {{ message }}
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
